@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            background-color: bisque;
+            color: red;
+            border: 2px solid black;
+            margin: auto;
+            padding: auto;
+            width: 80%;
+            font-size: 20px;
+        }
+        /* thead{
+            font-size: 25px;
+            border: 2px solid black;
+        } */
+    
+    </style>
+   
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Images</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Stock</th>
+        </tr>
+        </thead>
+        <tbody id="table">
+              
+        </tbody>
+    </table>
+     <script>
+        async function getProducts() {
+            try {
+                const url = "https://dummyjson.com/products?limit=100";
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+                const array = data.products;
+                let row = "";
+                array.forEach(element => {
+                    const { id, title,category,thumbnail, price,rating,stock} = element;
+                    console.log("ID:", id);
+                    console.log("Title:", title);
+                    console.log("Images:", thumbnail);
+                    console.log("Category: ", category);
+                    console.log("Price:", price);
+                    console.log("Rating:", rating);
+                    console.log("Stock:", stock);
+                    row+= `<tr> 
+                        <td> ${id} </td>
+                        <td> ${title} </td>
+                        <td> <img src=${thumbnail} width="80"> </td>
+                        <td> ${category} </td>
+                        <td> ${price} </td>
+                        <td> ${rating} </td>
+                        <td> ${stock} </td>
+                        </tr>`;
+                });
+               ele.innerHTML=row;
+            } catch (error) {
+                console.log("Error : ", error);
+                ele.innerHTML=`<tr> 
+                    <td colspan="7" style="text-align: center; color: red;">Failed to load products. Please try again later.</td>
+                    </tr>`;
+            }
+        }
+        const ele = document.getElementById("table");
+        getProducts();
+    </script>
+</body>
+
+</html>
