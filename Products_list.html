@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            background-color: bisque;
+            color: red;
+            border: 2px solid black;
+            margin: auto;
+            padding: auto;
+            width: 80%;
+            font-size: 20px;
+        }
+
+        caption {
+            font-size: 45px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <caption>List of Products</caption>
+        <thead>
+            <!-- <tr> -->
+            <th>ID</th>
+            <th>Title</th>
+            <th>Images</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Stock</th>
+            <!-- </tr> -->
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+    </table>
+    <script>
+        async function getProducts() {
+            try {
+                const url = "https://dummyjson.com/products?limit=100";
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+                let row = "";
+                data.products.map((i, index) => {
+                    row += `<tr> 
+                                <td> ${index + 1} </td>
+                                <td> ${i.title} </td>
+                                <td> <img src=${i.thumbnail} width="80"> </td>
+                                <td> ${i.category} </td>
+                                <td> ${formatNumber(i.price * rte)}₹ </td>
+                                <td> ${i.rating} </td>
+                                <td> ${i.stock} </td>
+                                </tr>`;
+                })
+                ele.innerHTML = row;
+            } catch (error) {
+                console.log("Error : ", error);
+                ele.innerHTML = `<tr> 
+                    <td colspan="7" style="text-align: center; color: red;">Failed to load products. Please try again later.</td>
+                    </tr>`;
+            }
+        }
+        async function getRate() {
+            try {
+                const URL = "https://open.er-api.com/v6/latest";
+                const res = await fetch(URL);
+                if (!res.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await res.json();
+                const rate = data.rates.INR;
+                console.log("rte=", rate);
+                return rate;
+            } catch (error) {
+                console.log("Error :", error);
+
+            }
+        }
+        const ele = document.getElementById("table-body");
+        let rte = 0;
+        console.log(typeof(rte));
+        
+        test();
+        async function test() {
+            rte = await getRate();
+        }
+        function formatNumber(num) {
+            if (num >= 1000) {
+                return num.toLocaleString("en-US", { maximumFractionDigits: 2 });
+            } else if (num >= 1) {
+                return num.toFixed(4);
+            } else {
+                return num.toFixed(6);
+            }
+        }
+        getProducts();
+    </script>
+</body>
+
+</html>
