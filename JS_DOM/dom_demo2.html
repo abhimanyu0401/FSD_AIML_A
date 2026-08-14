@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        .card{
+            border: 2px solid blanchedalmond;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            padding: 10px;
+            text-align: center;
+            background-color: bisque;
+        }
+        .img{
+            width: 150px;
+            height: 150px;
+        }
+        #book{
+            display: flex;
+            flex-direction: row;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1><center>Book Store</center></h1>
+    <div id="root">
+        <div id="book">
+
+        </div>
+    </div>
+    <button onclick="getBook()">Get Book</button>
+    <script src="dom_demo2.js"></script>
+</body>
+</html>
