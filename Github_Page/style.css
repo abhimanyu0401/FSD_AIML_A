@@ -1,0 +1,102 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     min-height: 100vh;
+     background-color: #24292F;
+     color: aliceblue;
+     display: flex;
+     flex-direction: column;
+     font-family: "Mona Sans", sans-serif;
+ }
+
+ header {
+     background-color: black;
+     min-height: 70px;
+     padding: 10px 20px;
+     display: flex;
+     align-items: center;
+ }
+
+ nav {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+ }
+
+ main {
+     flex: 1;
+     display: flex;
+ }
+
+ .box {
+     background-color: #161b22;
+ }
+
+ #box1 {
+     flex: 0 0 350px;
+     padding: 20px;
+ }
+
+ #box2 {
+     flex: 1;
+     padding: 30px 20px;
+ }
+
+ #sidebar img {
+     height: 300px;
+     width: 300px;
+     border-radius: 50%;
+     object-fit: cover;
+     margin-bottom: 15px;
+ }
+
+ #sidebar .name {
+     font-size: 24px;
+     font-weight: 700;
+     margin-bottom: 4px;
+ }
+
+ #sidebar .username {
+     font-size: 20px;
+     font-weight: 400;
+     color: #8b949e;
+ }
+
+ #repo_count {
+     padding: 20px;
+     font-size: large;
+ }
+
+ #container {
+     padding: 20px;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 20px;
+ }
+
+ .repo {
+     border: 1px solid #30363d;
+     border-radius: 8px;
+     padding: 20px;
+     background-color: #0d1117;
+ }
+
+ .repo a {
+     color: #58a6ff;
+     font-size: 18px;
+     font-weight: 600;
+     text-decoration: none;
+ }
+
+ .repo a:hover {
+     text-decoration: underline;
+ }
+
+ .repo p {
+     margin-top: 10px;
+     color: #8b949e;
+ }
