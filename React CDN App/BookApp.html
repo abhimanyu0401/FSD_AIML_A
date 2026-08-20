@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+        }
+
+        body {
+            background-color: aquamarine;
+        }
+
+        #root {
+            display: flex;
+            flex-direction: row;
+            margin: 20px;
+
+        }
+
+        .card {
+            border: 2px solid black;
+            background-color: bisque;
+            width: 220px;
+            height: 220px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>
+        <center>Book Store</center>
+    </h1>
+    <button onclick="viewCart()">View Cart</button>
+    </header>
+    
+    <div id="root">
+
+    </div>
+    <div id="cart">
+
+    </div>
+
+</body>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="./BookApp.js"></script>
+
+</html>
