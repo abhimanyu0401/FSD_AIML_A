@@ -1,0 +1,16 @@
+{
+  "name": "book_npm_app",
+  "version": "1.0.0",
+  "description": "Book Store App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abhimanyu",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^5.8.38",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  }
+}
