@@ -2,23 +2,29 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  
+  }
+  body{
+    background-color: antiquewhite;
   }
 .header{
-    height: 10vh;
+    height: 15vh;
     background-color: black;
     color: beige;
     display: flex;
+    font-size: x-large;
   justify-content: center;
   align-items: center;
 }
 
 .navbar{
   height: 5vh;
-  background-color: black;
+  background-color: brown;
   color: beige;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  font-size: x-large;
 }
 .navbar a{
   text-decoration: none;
@@ -32,6 +38,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+  min-height: 72vh;
 }
 .footer{
   height: 8vh;

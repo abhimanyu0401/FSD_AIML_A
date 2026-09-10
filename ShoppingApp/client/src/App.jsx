@@ -2,7 +2,9 @@ import UserLayout from './pages/UserLayout'
 import "./App.css"
 import {BrowserRouter, Routes , Route} from "react-router-dom"
 import ItemStore from './components/ItemStore'
+import { useState } from 'react'
 const App = () => {
+  const [cart,setCart] = useState([]);
   return (
     <div>
       <BrowserRouter>
