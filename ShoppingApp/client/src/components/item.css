@@ -28,5 +28,10 @@
 }
 
 .btn{
-    width:55px ;
+    width:100px ;
+    height: 30px;
+    background-color: black;
+    color: beige ;
+    border: 1px solid black;
+    border-radius: 15px;
 }
