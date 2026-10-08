@@ -1,0 +1,28 @@
+.m{
+    height: 50px;
+    width: 50px;
+    background-color: beige;
+}
+.s{
+    height: 50px;
+    width: 50px;
+    background-color: beige;
+}
+.ms{
+    height: 50px;
+    width: 50px;
+    background-color: beige;
+}
+
+.container{
+    display: flex;
+    gap: 5px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
